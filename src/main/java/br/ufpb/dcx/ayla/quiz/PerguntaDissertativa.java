@@ -9,6 +9,9 @@ public class PerguntaDissertativa extends Pergunta {
     public PerguntaDissertativa(){
         super();
     }
+
+
+
     @Override
     public boolean estahCorretaResposta(String resposta) {
         //TODO: FAZER
