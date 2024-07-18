@@ -2,7 +2,7 @@ package br.ufp.dcx.rian.Artesanato;
 
 import java.util.Objects;
 
-public class ItemDeArtesanato {
+public class ItemDeArtesanato implements Comparable<ItemDeArtesanato>{
     private String codigo;
     private String nome;
     private double preco;
@@ -53,4 +53,17 @@ public class ItemDeArtesanato {
     public int hashCode() {
         return Objects.hash(codigo);
     }
+
+    @Override
+    public int compareTo(ItemDeArtesanato o) {
+       // return this.nome.compareTo((o.getNome()));
+        if (this.preco <o.getPreco()){
+            return -1;
+        } else if (this.preco==o.getPreco()) {
+            return 0;
+        }else {
+            return 1;
+        }
+    }
 }
+
