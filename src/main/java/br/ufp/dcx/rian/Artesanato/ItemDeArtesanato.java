@@ -1,5 +1,7 @@
 package br.ufp.dcx.rian.Artesanato;
 
+import java.util.Objects;
+
 public class ItemDeArtesanato {
     private String codigo;
     private String nome;
@@ -37,5 +39,18 @@ public class ItemDeArtesanato {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ItemDeArtesanato that = (ItemDeArtesanato) o;
+        return Objects.equals(codigo, that.codigo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigo);
     }
 }
