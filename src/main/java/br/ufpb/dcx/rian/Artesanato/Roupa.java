@@ -1,4 +1,4 @@
-package br.ufp.dcx.rian.Artesanato;
+package br.ufpb.dcx.rian.Artesanato;
 
 public class Roupa extends ItemDeArtesanato{
     private String material;
