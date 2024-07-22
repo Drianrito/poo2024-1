@@ -6,7 +6,7 @@ public class MensagemParatodos extends Mensagem {
     }
     public String getTextoCompleto(){
         if(ehAnonima()){
-        return "Mensagem para todos."+getTexto();
+        return "Mensagem para todos "+getTexto();
         }else{
            return "Mensagem de" +getEmailRemetente() + "para todos." +  "\n Texto:" +getTexto();
         }

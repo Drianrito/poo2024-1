@@ -33,7 +33,7 @@ public class Amigo {
     public void setEmailAmigoSorteado(String emailAmigoSorteado) {
         this.emailAmigoSorteado = emailAmigoSorteado;
     }
-    public void setAmigoSorteado(String emailSorteadoa){
-
+    public void setAmigoSorteado(String emailSorteado){
+        this.emailAmigoSorteado = emailSorteado;
     }
 }
