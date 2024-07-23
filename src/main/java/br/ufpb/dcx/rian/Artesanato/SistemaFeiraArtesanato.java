@@ -20,7 +20,7 @@ public  interface SistemaFeiraArtesanato {
      * Pesquisa todos os itens cuja o nome começa com o nome passado como parâmetro.
      * @param nome O nome a pesquisar
      * @return uma lista contendo os itens cuja nome começa com o parametro passado.
-     * */
+     */
     public List<ItemDeArtesanato> pesquisaItensPeloNome(String nome);
 
 
@@ -29,8 +29,15 @@ public  interface SistemaFeiraArtesanato {
      *
      * @param preco valor a pesquisar
      * @return Uma lista contendo itens cujo preço é menor ou igual ao valor do parâmetro
-     * */
+     *
+     */
     public List<ItemDeArtesanato> pesquisaItensAbaixoDoPreco(double preco);
 
+    /**
+     * Pesquisa o item cujo codigo é passado por parâmetro
+     * @param codigo O codigo do item a pesquisar
+     * @return o item encontrrado
+     * @throws ItemInexistenteException Se nao for encontrado nenhum item com o codigo passado.
+     */
     public ItemDeArtesanato pesqusiaItemPeloCodigo(String codigo) throws ItemInexistenteException;
 }
