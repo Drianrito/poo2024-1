@@ -12,7 +12,7 @@ public class Roupa extends ItemDeArtesanato{
         this.tamanho =tamanho;
     }
     public Roupa() {
-
+        this("","",0,",","","");
     }
 
     public String getMaterial() {
