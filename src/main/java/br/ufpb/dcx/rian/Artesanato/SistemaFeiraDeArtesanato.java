@@ -4,31 +4,35 @@ import java.util.*;
 
 public class SistemaFeiraDeArtesanato implements SistemaFeiraArtesanato {
     private Map<String,ItemDeArtesanato> ItensDeArtesanato;
+    public static final String  PREFIXO_CODIGO= "COD";
 
     public SistemaFeiraDeArtesanato(){
         this.ItensDeArtesanato=new HashMap<>();
     }
 
     @Override
-    public boolean cadastraItem(ItemDeArtesanato item) {
+    public void cadastraItem(ItemDeArtesanato item)throws CodigoInvallidoException,ItemJaExisteException {
         if(this.ItensDeArtesanato.containsKey(item.getCodigo())){
-            return false;
+            throw new ItemJaExisteException("Ja existe item com o codigo: "+ item.getCodigo());
         }else{
-        this.ItensDeArtesanato.put(item.getCodigo(),item);
-        return true;
+            if(item.getCodigo().startsWith(PREFIXO_CODIGO)){
+                this.ItensDeArtesanato.put(item.getCodigo(),item);
+            }else{
+                throw new CodigoInvallidoException("Codigo Invalido, digite novamente");
+            }
         }
     }
 
     @Override
     public List<ItemDeArtesanato> pesquisaItensPeloNome(String nome) {
-        List<ItemDeArtesanato> itensPesquisados = new LinkedList<>();
+        List<ItemDeArtesanato> itensPesquisadosPeloNome = new LinkedList<>();
         for(ItemDeArtesanato item: this.ItensDeArtesanato.values()){
             if(item.getNome().startsWith(nome)){
-                itensPesquisados.add(item);
+                itensPesquisadosPeloNome.add(item);
             }
         }
-        Collections.sort(itensPesquisados);
-        return itensPesquisados;
+        Collections.sort(itensPesquisadosPeloNome);
+        return itensPesquisadosPeloNome;
     }
 
     @Override
