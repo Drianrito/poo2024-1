@@ -1,6 +1,5 @@
 package br.ufpb.dcx.rian.SistemaAmigo;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
