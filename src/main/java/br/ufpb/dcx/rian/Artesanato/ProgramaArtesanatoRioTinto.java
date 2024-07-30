@@ -27,19 +27,7 @@ public class ProgramaArtesanatoRioTinto {
                         JOptionPane.showMessageDialog(null,e.getMessage());
                         e.printStackTrace();
                     }
-                }if (tipoItem.equals("2")){
-                ItemDeArtesanato item = new ItemDeArtesanato();
-                item.setCodigo(JOptionPane.showInputDialog("Digite o codigo")) ;
-                item.setNome(JOptionPane.showInputDialog("Digite o nome do produto"));
-                item.setPreco(Double.parseDouble(JOptionPane.showInputDialog("Digite o preço: ")));
-                try {
-                    sistema.cadastraItem(item);
-                    JOptionPane.showMessageDialog(null,"Item cadastrado com sucesso: "+ item.toString());
-
-                }catch (Exception e){
-                    JOptionPane.showMessageDialog(null,e.getMessage());
-                    e.printStackTrace();
-                }}
+                }
 
             } else if (opcao.equals("2")) {
                 String nomeDoItem = JOptionPane.showInputDialog("Digite o nome do item a pesqiosar");

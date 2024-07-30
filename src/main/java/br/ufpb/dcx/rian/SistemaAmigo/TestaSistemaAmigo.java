@@ -8,8 +8,8 @@ public class TestaSistemaAmigo {
     public static void main(String[] args) {
         SistemaAmigo sistemaAmigo = new SistemaAmigo();
         List<Mensagem> exibirMensangens = new ArrayList<>();
-        sistemaAmigo.cadastrarAmigo("Jose","jose@dcx");
-        sistemaAmigo.cadastrarAmigo("Maria","maria@dcx");
+        sistemaAmigo.cadastraAmigo("Jose","jose@dcx");
+        sistemaAmigo.cadastraAmigo("Maria","maria@dcx");
         try {
             sistemaAmigo.configuraAmigoSecretoDe("jose@dcx","maria@dcx");
             sistemaAmigo.configuraAmigoSecretoDe("maria@dcx","jose@dcx");
@@ -18,7 +18,7 @@ public class TestaSistemaAmigo {
         }
         sistemaAmigo.enviarMensagemParaAlguem("Oi","maria@dcx","jose@dcx",true);
         sistemaAmigo.enviarMensagemParaTodos("OI TODOS","maria@dcx",true);
-        exibirMensangens = sistemaAmigo.pesquisarMensagemAnonima();
+        exibirMensangens = sistemaAmigo.pesquisaMensagensAnonimas();
         for(Mensagem men: exibirMensangens){
             System.out.println(men.getTextoCompleto());
         }

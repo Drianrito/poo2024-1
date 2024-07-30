@@ -9,8 +9,9 @@ public class TestaSistemaAmigoGUI {
         for (int k=1;k<quantAmigos;k++){
             String nome = JOptionPane.showInputDialog("Nome do jogador : ");
             String email = JOptionPane.showInputDialog("Email do jogador: ");
-            sistema.cadastrarAmigo(nome,email);
+            sistema.cadastraAmigo(nome,email);
 
         }
+        
     }
 }

@@ -7,11 +7,11 @@ public class SistemaAmigo {
     private List<Mensagem> mensagens = new ArrayList<>();
     private List<Amigo> amigos = new ArrayList<>();
 
-    public void cadastrarAmigo(String nomeAmigo, String emailAmigo){
+    public void cadastraAmigo(String nomeAmigo, String emailAmigo){
         Amigo novoAmigo = new Amigo(nomeAmigo,emailAmigo);
         amigos.add(novoAmigo);
     }
-    public Amigo pesquisarAmigo(String amigoEmail){
+    public Amigo pesquisaAmigo(String amigoEmail){
         for(Amigo ami: amigos){
             if (amigoEmail.equals(ami.getEmail())){
                 return ami;
@@ -27,7 +27,7 @@ public class SistemaAmigo {
         Mensagem novaMensagemAlguem = new MensagemParaAlguem(texto,emailRemetente,emailDestinatario,ehAnonima);
         mensagens.add(novaMensagemAlguem);
     }
-    public List<Mensagem> pesquisarMensagemAnonima(){
+    public List<Mensagem> pesquisaMensagensAnonimas(){
         List<Mensagem> novalista = new ArrayList<>();
         for(Mensagem men: mensagens){
             if(men.ehAnonima()){
@@ -40,7 +40,7 @@ public class SistemaAmigo {
         return mensagens;
     }
     public void configuraAmigoSecretoDe(String emailDaPessoa, String amigoSorteado)throws AmigoInexistenteException{
-        Amigo amgSecreto = pesquisarAmigo(emailDaPessoa);
+        Amigo amgSecreto = pesquisaAmigo(emailDaPessoa);
         if(amgSecreto == null){
             throw new AmigoInexistenteException("Amigo Nao existe");
         }else{
@@ -48,7 +48,7 @@ public class SistemaAmigo {
         }
     }
     public String pesquisaAmigoSecretoDe(String emailDaPessoa) throws AmigoInexistenteException, AmigoNaoSorteadoException {
-        Amigo pesquisaSecreta = pesquisarAmigo(emailDaPessoa);
+        Amigo pesquisaSecreta = pesquisaAmigo(emailDaPessoa);
         if(pesquisaSecreta==null){
             throw new AmigoNaoSorteadoException("Voce nao foi sorteado");
         } else if (pesquisaSecreta.getEmailAmigoSorteado()==null) {
