@@ -7,7 +7,12 @@ public class SistemaAmigo {
     private List<Mensagem> mensagens = new ArrayList<>();
     private List<Amigo> amigos = new ArrayList<>();
 
-    public void cadastraAmigo(String nomeAmigo, String emailAmigo){
+    public void cadastraAmigo(String nomeAmigo, String emailAmigo)throws AmigoJaExisteException{
+        for(Amigo amigo: amigos){
+            if(amigo.getEmail().equals(emailAmigo)){
+                throw new AmigoJaExisteException("Amigo ja Cadastrado");
+            }
+        }
         Amigo novoAmigo = new Amigo(nomeAmigo,emailAmigo);
         amigos.add(novoAmigo);
     }
