@@ -11,16 +11,20 @@ public class SistemaAmigo {
         Amigo novoAmigo = new Amigo(nomeAmigo,emailAmigo);
         amigos.add(novoAmigo);
     }
-    public Amigo pesquisaAmigo(String amigoEmail){
+    public Amigo pesquisaAmigo(String amigoEmail)throws AmigoInexistenteException{
+        Amigo amigoEncontrado = null;
         for(Amigo ami: amigos){
             if (amigoEmail.equals(ami.getEmail())){
-                return ami;
+                amigoEncontrado = ami;
             }
         }
-        return null;
+        if(amigoEncontrado ==null){
+            throw new AmigoInexistenteException("Nenhum Amigo encontrado");
+        }
+        return amigoEncontrado;
     }
     public void enviarMensagemParaTodos(String texto, String emailRemetente, boolean ehAnonima){
-        Mensagem novaMensagem = new MensagemParatodos(texto,emailRemetente,ehAnonima);
+        Mensagem novaMensagem = new MensagemParaTodos(texto,emailRemetente,ehAnonima);
         mensagens.add(novaMensagem);
     }
     public void enviarMensagemParaAlguem(String texto, String emailRemetente, String emailDestinatario, boolean ehAnonima){

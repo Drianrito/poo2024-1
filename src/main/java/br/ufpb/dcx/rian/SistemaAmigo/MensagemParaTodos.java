@@ -1,7 +1,7 @@
 package br.ufpb.dcx.rian.SistemaAmigo;
 
-public class MensagemParatodos extends Mensagem {
-    public MensagemParatodos(String texto, String emailRemetente, boolean anonima) {
+public class MensagemParaTodos extends Mensagem {
+    public MensagemParaTodos(String texto, String emailRemetente, boolean anonima) {
         super(texto, emailRemetente, anonima);
     }
     public String getTextoCompleto(){
