@@ -1,6 +1,5 @@
 package br.ufpb.dcx.rian.SistemaAmigo;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,8 +7,12 @@ public class TestaSistemaAmigo {
     public static void main(String[] args) {
         SistemaAmigo sistemaAmigo = new SistemaAmigo();
         List<Mensagem> exibirMensangens = new ArrayList<>();
+        try{
         sistemaAmigo.cadastraAmigo("Jose","jose@dcx");
-        sistemaAmigo.cadastraAmigo("Maria","maria@dcx");
+        sistemaAmigo.cadastraAmigo("Maria","maria@dcx");}
+        catch (AmigoJaExisteException e){
+            System.out.println("Falhou");
+        }
         try {
             sistemaAmigo.configuraAmigoSecretoDe("jose@dcx","maria@dcx");
             sistemaAmigo.configuraAmigoSecretoDe("maria@dcx","jose@dcx");
