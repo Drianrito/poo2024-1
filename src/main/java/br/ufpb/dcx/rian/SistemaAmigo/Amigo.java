@@ -1,5 +1,7 @@
 package br.ufpb.dcx.rian.SistemaAmigo;
 
+import java.util.Objects;
+
 public class Amigo {
     private String nome;
     private String email;
@@ -35,5 +37,18 @@ public class Amigo {
     }
     public void setAmigoSorteado(String emailSorteado){
         this.emailAmigoSorteado = emailSorteado;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Amigo amigo = (Amigo) o;
+        return Objects.equals(email, amigo.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(email);
     }
 }

@@ -1,22 +1,19 @@
 package br.ufpb.dcx.rian.SistemaAmigo;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-
-import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class SistemaAmigoTest {
+import java.util.List;
 
-	SistemaAmigo sistema;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class SistemaAmigoMapTest {
+
+	SistemaAmigoMap sistema;
 	
 	@BeforeEach
-	void setUp()  {
-		this.sistema = new SistemaAmigo();
+	 void setUp()  {
+		this.sistema = new SistemaAmigoMap();
 	}
 
 	@Test

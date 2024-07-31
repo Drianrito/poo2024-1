@@ -1,6 +1,7 @@
 package br.ufpb.dcx.rian.SistemaAmigo;
 
 import java.io.StringBufferInputStream;
+import java.util.Objects;
 
 public abstract class  Mensagem {
     private String texto;
@@ -44,6 +45,19 @@ public abstract class  Mensagem {
         }else{
             return false;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mensagem mensagem = (Mensagem) o;
+        return Objects.equals(emailRemetente, mensagem.emailRemetente);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(emailRemetente);
     }
 }
 

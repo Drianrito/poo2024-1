@@ -8,8 +8,8 @@ public class TestaSistemaAmigo {
         SistemaAmigo sistemaAmigo = new SistemaAmigo();
         List<Mensagem> exibirMensangens = new ArrayList<>();
         try{
-        sistemaAmigo.cadastraAmigo("Jose","jose@dcx");
-        sistemaAmigo.cadastraAmigo("Maria","maria@dcx");}
+            sistemaAmigo.cadastraAmigo("Jose","jose@dcx");
+            sistemaAmigo.cadastraAmigo("Maria","maria@dcx");}
         catch (AmigoJaExisteException e){
             System.out.println("Falhou");
         }
