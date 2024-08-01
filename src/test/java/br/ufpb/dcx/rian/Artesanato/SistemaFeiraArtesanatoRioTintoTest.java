@@ -12,9 +12,11 @@ public class SistemaFeiraArtesanatoRioTintoTest {
             Roupa r = new Roupa();
             sistema.cadastraItem(r);
             ItemDeArtesanato item = sistema.pesqusiaItemPeloCodigo(r.getCodigo());
-            assertEquals(item,r);
-        } catch (CodigoInvallidoException | ItemJaExisteException | ItemInexistenteException e) {
-            fail();
+            assertEquals(r,item);
+        } catch (CodigoInvallidoException e) {
+            //OK
+        }catch (ItemJaExisteException | ItemInexistenteException e){
+            fail("Nao era pra lançar essa exceção");
         }
     }
 }
