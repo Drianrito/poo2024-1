@@ -1,6 +1,10 @@
 package br.ufpb.dcx.rian.SistemaAmigo;
 
 
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoInexistenteException;
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoJaExisteException;
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoNaoSorteadoException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,7 +20,7 @@ public class SistemaAmigoMap{
         this.amigos = new HashMap<>();
     }
 
-    public void cadastraAmigo(String nome, String email)throws AmigoJaExisteException{
+    public void cadastraAmigo(String nome, String email)throws AmigoJaExisteException {
         if(this.amigos.containsKey(email)){
             throw new AmigoJaExisteException("Esse amigo ja cadastrado");
         }else{
@@ -25,7 +29,7 @@ public class SistemaAmigoMap{
         }
     }
 
-    public Amigo pesquisaAmigo(String amigoEmail)throws AmigoInexistenteException{
+    public Amigo pesquisaAmigo(String amigoEmail)throws AmigoInexistenteException {
         Amigo amigoEncontrado = null;
         for(Amigo ami: this.amigos.values())
             if (amigoEmail.equals(ami.getEmail())){

@@ -1,5 +1,9 @@
 package br.ufpb.dcx.rian.SistemaAmigo;
 
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoInexistenteException;
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoJaExisteException;
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoNaoSorteadoException;
+
 import java.util.ArrayList;
 import java.util.List;
 

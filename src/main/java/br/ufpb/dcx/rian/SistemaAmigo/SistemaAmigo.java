@@ -1,5 +1,9 @@
 package br.ufpb.dcx.rian.SistemaAmigo;
 
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoInexistenteException;
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoJaExisteException;
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoNaoSorteadoException;
+
 import java.util.*;
 
 public class SistemaAmigo {
@@ -7,7 +11,7 @@ public class SistemaAmigo {
     private List<Mensagem> mensagens = new ArrayList<>();
     private List<Amigo> amigos = new ArrayList<>();
 
-    public void cadastraAmigo(String nomeAmigo, String emailAmigo)throws AmigoJaExisteException{
+    public void cadastraAmigo(String nomeAmigo, String emailAmigo)throws AmigoJaExisteException {
         for(Amigo amigo: amigos){
             if(amigo.getEmail().equals(emailAmigo)){
                 throw new AmigoJaExisteException("Amigo ja Cadastrado");
@@ -16,7 +20,7 @@ public class SistemaAmigo {
         Amigo novoAmigo = new Amigo(nomeAmigo,emailAmigo);
         amigos.add(novoAmigo);
     }
-    public Amigo pesquisaAmigo(String amigoEmail)throws AmigoInexistenteException{
+    public Amigo pesquisaAmigo(String amigoEmail)throws AmigoInexistenteException {
         Amigo amigoEncontrado = null;
         for(Amigo ami: amigos){
             if (amigoEmail.equals(ami.getEmail())){

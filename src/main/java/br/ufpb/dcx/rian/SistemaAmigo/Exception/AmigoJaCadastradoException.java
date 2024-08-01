@@ -1,4 +1,4 @@
-package br.ufpb.dcx.rian.SistemaAmigo;
+package br.ufpb.dcx.rian.SistemaAmigo.Exception;
 
 public class AmigoJaCadastradoException extends Exception{
     public AmigoJaCadastradoException(String msg){

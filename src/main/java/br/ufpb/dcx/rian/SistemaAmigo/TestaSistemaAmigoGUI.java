@@ -1,5 +1,7 @@
 package br.ufpb.dcx.rian.SistemaAmigo;
 
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoJaExisteException;
+
 import javax.swing.*;
 
 public class TestaSistemaAmigoGUI {

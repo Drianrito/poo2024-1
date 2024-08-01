@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoInexistenteException;
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoJaExisteException;
+import br.ufpb.dcx.rian.SistemaAmigo.Exception.AmigoNaoSorteadoException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +22,7 @@ public class SistemaAmigoTest {
 	@Test
 	void testSistemaAmigo() {
 		assertTrue(sistema.pesquisaTodasAsMensagens().isEmpty());
-		assertThrows(AmigoInexistenteException.class, 
+		assertThrows(AmigoInexistenteException.class,
 				()-> sistema.pesquisaAmigo("ayla@teste.com"));
 	}
 

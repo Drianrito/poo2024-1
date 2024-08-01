@@ -1,4 +1,4 @@
-package br.ufpb.dcx.rian.SistemaAmigo;
+package br.ufpb.dcx.rian.SistemaAmigo.Exception;
 
 public class AmigoInexistenteException extends Exception{
     public AmigoInexistenteException(String msg){
