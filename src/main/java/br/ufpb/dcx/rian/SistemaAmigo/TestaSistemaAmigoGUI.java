@@ -14,7 +14,11 @@ public class TestaSistemaAmigoGUI {
             try {
                 sistema.cadastraAmigo(nome,email);
             } catch (AmigoJaExisteException e) {
-                throw new RuntimeException(e);
+                try {
+                    throw new AmigoJaExisteException("Esse amigo ja existe");
+                } catch (AmigoJaExisteException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
 
         }

@@ -2,6 +2,7 @@ package br.ufpb.dcx.rian.SistemaComercial;
 
 import br.ufpb.dcx.rian.SistemaComercial.Exception.*;
 
+import java.util.Collection;
 import java.util.Collections;
 
 public interface SistemaComercial {
@@ -10,7 +11,6 @@ public interface SistemaComercial {
     boolean cadastraProduto(Produto produto);
     boolean existeCliente (Cliente cliente);
     public Cliente pesquisaCliente(String id)throws ClienteNaoExisteException;
-    public Collections<Produto> pesquisaProdutosDaCategoria(CategoriaProduto categoria);
-
+    public Collection<Produto> pesquisaProdutosDaCategoria(CategoriaProduto categoria);
 
 }

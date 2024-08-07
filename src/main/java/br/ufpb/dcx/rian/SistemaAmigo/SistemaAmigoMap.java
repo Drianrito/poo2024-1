@@ -29,17 +29,16 @@ public class SistemaAmigoMap{
         }
     }
 
-    public Amigo pesquisaAmigo(String amigoEmail)throws AmigoInexistenteException {
-        Amigo amigoEncontrado = null;
-        for(Amigo ami: this.amigos.values())
+    public List<Amigo> pesquisaAmigo(String amigoEmail)throws AmigoInexistenteException {
+        List<Amigo> amigo = new ArrayList<>();
+        for(Amigo ami: this.amigos.values()){
             if (amigoEmail.equals(ami.getEmail())){
-                amigoEncontrado = ami;
-            }
-
-        if(amigoEncontrado ==null){
-            throw new AmigoInexistenteException("Nenhum Amigo encontrado");
-        }
-        return amigoEncontrado;
+               amigo.add(ami);
+            }}
+       if(!this.amigos.containsKey(amigoEmail)){
+           throw new AmigoInexistenteException("");
+       }
+        return amigo;
     }
     public void enviarMensagemParaTodos(String texto, String emailRemetente, boolean ehAnonima){
         Mensagem novaMensagem = new MensagemParaTodos(texto,emailRemetente,ehAnonima);
