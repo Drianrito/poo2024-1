@@ -61,7 +61,7 @@ public class SistemaAmigoMap{
         return mensagens;
     }
     public void configuraAmigoSecretoDe(String emailDaPessoa, String amigoSorteado)throws AmigoInexistenteException{
-        Amigo amgSecreto = pesquisaAmigo(emailDaPessoa);
+        Amigo amgSecreto = amigos.get(emailDaPessoa);
         if(amgSecreto == null){
             throw new AmigoInexistenteException("Amigo Nao existe");
         }else{
@@ -69,7 +69,7 @@ public class SistemaAmigoMap{
         }
     }
     public String pesquisaAmigoSecretoDe(String emailDaPessoa) throws AmigoInexistenteException, AmigoNaoSorteadoException {
-        Amigo pesquisaSecreta = pesquisaAmigo(emailDaPessoa);
+        Amigo pesquisaSecreta = amigos.get(emailDaPessoa);
         if(pesquisaSecreta==null){
             throw new AmigoNaoSorteadoException("Voce nao foi sorteado");
         } else if (pesquisaSecreta.getEmailAmigoSorteado()==null) {

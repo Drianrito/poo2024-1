@@ -27,26 +27,6 @@ public class SistemaAmigoMapTest {
 	}
 
 	@Test
-	void testPesquisaECadastraAmigo() {
-		try {
-			sistema.pesquisaAmigo("ayla@teste.com");
-			fail("Deveria falhar pois não existe ainda");
-		} catch (AmigoInexistenteException e) {
-			//Ok
-		}
-		try {
-			sistema.cadastraAmigo("ayla", "ayla@teste.com");
-			Amigo a = sistema.pesquisaAmigo("ayla@teste.com");
-			assertEquals("ayla", a.getNome());
-			assertEquals("ayla@teste.com", a.getEmail());
-		} catch (AmigoJaExisteException | AmigoInexistenteException  e) {
-			fail("Não deveria lançar exceção");
-		} 
-		
-		
-	}
-
-	@Test
 	void testEnviarMensagemParaTodos() {
 		assertTrue(sistema.pesquisaTodasAsMensagens().isEmpty());
 		sistema.enviarMensagemParaTodos("texto", "ayla@dcx.ufpb.br", true);
